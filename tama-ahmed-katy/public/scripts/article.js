@@ -40,11 +40,11 @@ var app = app || {};
   };
 
   Article.numWordsAll = () => {
-    return Article.all.map().reduce();
+    return Article.all.map(el => el.body.reduce((a,b) => a.length+b.length))
   };
 
   Article.allAuthors = () => {
-    return Article.all.map().reduce();
+    return Article.all.map((el,arr)=> arr.push(el.author)).sort().reduce( (cur, next, arr) => { if (cur !== next) {arr.push(cur) } })
   };
 
   Article.numWordsByAuthor = () => {
