@@ -27,11 +27,8 @@ var app = app || {};
     /* OLD forEach():
     rawData.forEach(articleObject => Article.all.push(new Article(articleObject)));
     */
-    rawData.map(function(articleObject){
-      let loadStuff = new Article(articleObject);
-      return loadStuff;
-    });
-
+   
+    Article.all = rawData.map(articleObject => new Article(articleObject));
   };
 
   Article.fetchAll = callback => {
@@ -43,7 +40,7 @@ var app = app || {};
   };
 
   Article.numWordsAll = () => {
-    return Article.all.map().reduce()
+    return Article.all.map().reduce();
   };
 
   Article.allAuthors = () => {
@@ -51,7 +48,7 @@ var app = app || {};
   };
 
   Article.numWordsByAuthor = () => {
-    return Article.allAuthors().map(author => {})
+    return Article.allAuthors().map().filter(author => {})
   };
 
   Article.truncateTable = callback => {
