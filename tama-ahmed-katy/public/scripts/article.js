@@ -27,6 +27,10 @@ var app = app || {};
     /* OLD forEach():
     rawData.forEach(articleObject => Article.all.push(new Article(articleObject)));
     */
+    rawData.map(function(articleObject){
+      let loadStuff = new Article(articleObject);
+      return loadStuff;
+    });
 
   };
 
