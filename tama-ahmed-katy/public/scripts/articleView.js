@@ -143,4 +143,4 @@ var app = app || {};
   };
   
   module.articleView = articleView;
-}), (app);
+})(app);
